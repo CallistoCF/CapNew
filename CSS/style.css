@@ -98,6 +98,29 @@ margin-top: 20px;
   overflow: auto;
 }
 
+/* The google custom search box */
+.qbox_e {
+  z-index: 5;
+  margin: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 3px solid;
+  border-color: black;
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  opacity: 1;
+  overflow: auto;
+  padding: 20px;
+}
+
+.shady {
+  opacity: 0.5;
+}
+
+.notshady {
+  opacity: 1.0;
+}
 .searchwrap {
 /*  background-color: #FFD401; */
   border-style: solid;

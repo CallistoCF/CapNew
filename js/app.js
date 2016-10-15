@@ -7,13 +7,17 @@ $( document ).ready(function() {
   $('.TitleBar').addClass('animated zoomIn');
   $('.sholder').addClass('animated zoomIn');
   $('.qbox').addClass('animated zoomIn');
+  $('.qbox_e').addClass('animated bounceInRight');
 
 
-
-  $(".TitleBar").mouseover(function(event){
-
-    $('.TitleBar').toggleClass('animated rubberBand');
-  });
+  $(".qbox_e").mouseleave(function(){
+    $(".qbox_e").addClass("shady");
+    $(".qbox_e").removeClass("notshady");
+  })
+  $(".qbox_e").mouseover(function(){
+    $(".qbox_e").addClass("notshady");
+    $(".qbox_e").removeClass("shady");
+  })
 
   $(".searchwrap").mouseover(function(){
       $( ".searchwrap" ).parent().css( "opacity", "1" );});
