@@ -10,6 +10,23 @@ $( document ).ready(function() {
   $('.qbox_e').addClass('animated bounceInRight');
 
 
+
+  $(".references").click(function(){
+    console.log("references clicked");
+    $(".references").toggleClass("btnclk");
+    $( function() {
+    $( "#dialog" ).dialog();
+    } );
+    setTimeout(function() { $(".references").toggleClass("btnclk"); }, 5000);
+  });
+
+
+
+
+
+
+
+
   $(".qbox_e").mouseleave(function(){
     $(".qbox_e").addClass("shady");
     $(".qbox_e").removeClass("notshady");
@@ -39,22 +56,20 @@ $( document ).ready(function() {
 $('#action-button').click(function() {
   console.log("Action button clicked!");
    $.ajax({
-      url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj&search=&type=',
+      url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj',
       data: {
-         format: 'json'
+         format: 'json',
+         type: 'S',
+         query: '',
+         theme1: 'Architecture',
       },
-      "method": "GET",
-          "headers": {
-              "cache-control": "no-cache"
-            },
-      dataType: 'json',
+      method: 'GET',
       success: function(data) {
         console.log(data);
-         var $title = $('<h1>').text(data.results[0].descr);
-         console.log(data.results[0].img_url);
-         var $image = $('#picto').html('<img src="' + data.results[0].img_url + '">');
-         $('#info')
-            .append($title);
+        var a = data.results[0];
+        console.log(a, a.descr);
+        $('#info').html(data.results[0].descr);
+        $('#picto').html('<img src=' + data.results[0].img_big + '></img>');
                               },
             });
                                     });

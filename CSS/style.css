@@ -152,6 +152,7 @@ margin-top: 20px;
 .searchwrap_y {font-family: 'LegoFont';}
 .searchwrap {font-family: 'LegoFont';}
 .exboxp {font-family: 'LegoFont';}
+.references {font-family: 'LegoFont';}
 
 .exboxp {
   color: black;
@@ -193,7 +194,6 @@ margin-top: 20px;
 #searchfor {
   margin-left: 20px;
   margin-top:20px;
-=======
   background-size: 105%;
 
 }
@@ -278,7 +278,23 @@ margin-top: 20px;
 
 #picto {
   height: auto;
+  width: auto;
+  max-width: 450px;
+  max-height: inherit;
+  margin: 20px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px black;
+  width: 100%;
+}
 
+#picto > img {
+  height: auto;
+  width: auto;
+}
+
+#info {
+  background-color: white;
+  border: 3px solid black;
 }
 
 .personable {
@@ -411,6 +427,28 @@ src: url('Legothick.ttf');
   color: white;
 }
 
+.references {
+  left: 150px;
+  margin: 20px;
+  border: 3px white solid;
+  height: 100px;
+  width: 250px;
+  color: white;
+  text-shadow: 1px 1px white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  position:relative;
+  box-shadow: 10px 10px 5px black;
+  background-color: #FFFF00;
+  color: black;
+}
+
+.btnclk {
+  background-color: white;
+  color: black;
+  box-shadow: none;
+}
 .ending_caption {
   margin-top: 10px;
   margin-left: 50px;
