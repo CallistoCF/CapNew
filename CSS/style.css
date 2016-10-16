@@ -77,123 +77,8 @@ margin-top: 20px;
   border-color: white;
   border-style: solid;
   border-width: 5px;
-  background-image: url("../Images/upclose.jpg");
+  background-image: url("../images/upclose.jpg");
   background-repeat: no-repeat;
-  background-repeat:repeat-y;
-  background-size: 115%;
-  z-index: 1;
-}
-
-.qbox {
-  z-index: 2;
-  margin: auto;
-  margin-left: 50px;
-  margin-right: 50px;
-  border: 3px solid;
-  border-color: black;
-  width: 90%;
-  height: 80%;
-  background-color: white;
-  opacity: .5;
-  overflow: auto;
-}
-
-/* The google custom search box */
-.qbox_e {
-  z-index: 5;
-  margin: auto;
-  margin-left: 50px;
-  margin-right: 50px;
-  border: 3px solid;
-  border-color: black;
-  width: 90%;
-  height: 80%;
-  background-color: white;
-  opacity: 1;
-  overflow: auto;
-  padding: 20px;
-}
-
-.shady {
-  opacity: 0.5;
-}
-
-.notshady {
-  opacity: 1.0;
-}
-.searchwrap {
-/*  background-color: #FFD401; */
-  border-style: solid;
-  border-width: 3px;
-  background-color: #E6331F;
-  color: black;
-  box-shadow: 10px 10px 5px black;
-}
-
-.searchwrap_b {
-/*  background-color: #FFD401; */
-  border-style: solid;
-  border-width: 3px;
-  background-color: blue;
-  color: black;
-  box-shadow: 10px 10px 5px black;
-}
-
-.searchwrap_y {
-  border-style: solid;
-  border-width: 3px;
-  background-color: #FFD401;
-  color: black;
-  box-shadow: 10px 10px 5px black;
-}
-
-.searchwrap {font-family: 'LegoFont';}
-.searchwrap_b {font-family: 'LegoFont';}
-.searchwrap_y {font-family: 'LegoFont';}
-.searchwrap {font-family: 'LegoFont';}
-.exboxp {font-family: 'LegoFont';}
-.references {font-family: 'LegoFont';}
-
-.exboxp {
-  color: black;
-  background-color: yellow;
-  text-align: center;
-}
-.api {
-  margin-right: 5px;
-  align-items: flex-start;
-  height: 500px;
-  position: inherit;
-  display: inline-flex;
-  width: 30%;
-  border-color: black;
-  border-width: 5px;
-  border-style: solid;
-  background-color: #FFD000;
-  z-index: 5;
-  margin-top: 50px;
-  order: 0;
-}
-
-#resultz {
-  margin-left: 5px;
-  align-items: flex-end;
-  height: 500px;
-  position: inherit;
-  display: inline-flex;
-  width: 60%;
-  border-color: black;
-  border-width: 5px;
-  border-style: solid;
-  background-color: #FFD000;
-  z-index: 5;
-  margin-top: 50px;
-  order: 1;
-}
-
-#searchfor {
-  margin-left: 20px;
-  margin-top:20px;
   background-size: 105%;
 
 }
@@ -206,99 +91,13 @@ margin-top: 20px;
   border:white;
   border-style: solid;
   border-width: 3px;
-  background-image: url("../Images/basic.png");
+  background-image: url("../images/basic.png");
   z-index: 5;
   margin-top: 7.5px;
 }
 
-#extsearch, #extsearch_y, #extsearch_b {
-  height: 60px;
-  position: relative;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-bottom: 25px;
-  background: white;
-  z-index: 3;
-  box-shadow: 10px 10px 5px black;
-}
-
-.searchwrap {
-  border: 3px solid black;
-  flex-direction: row;
-  position: inherit;
-  width: 100%;
-  height: auto;
-  display: inline-flex;
-  flex-direction: row;
-}
-
-.expandabox {
-  height: 100px;
-  width: 300px;
-  border: 3px white solid;
-  z-index: 3;
-  margin: 10px;
-  -webkit-transition: height 0.4s ease-in-out;
-  transition: height 0.4s ease-in-out;
-  background-color: white;
-}
-
-.expandabox:hover {
-    height: 300px;
-}
-
-.input[type=text] {
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 100%;
-}
-
-.sholder {
-  height: 310;
-  align-items: flex-end;
-  width: 50%;
-  border: solid 3 px;
-  border-color: black;
-  background-image: url("../Images/movieposter.jpg");
-  z-index: 2;
-  background-position: center;
-  background-size: 120%;
-}
-
-#action-button {
-margin-left: 20px;
-margin-top: 20px;
-}
-
-#picto {
-  height: auto;
-  width: auto;
-  max-width: 450px;
-  max-height: inherit;
-  margin: 20px;
-  border: 3px solid black;
-  box-shadow: 10px 10px 5px black;
-  width: 100%;
-}
-
-#picto > img {
-  height: auto;
-  width: auto;
-}
-
-#info {
-  background-color: white;
-  border: 3px solid black;
-}
-
 .personable {
-  background-image: url("../Images/upclose.jpg");
+  background-image: url("../images/upclose.jpg");
   background-size: 50%;
 }
 
@@ -335,7 +134,7 @@ html {
 
 }
 
-.TitleBar p {
+.TitleBar > p {
 /*  background-color: #FFD401; */
   border-style: solid;
   border-width: 3px;
@@ -427,28 +226,6 @@ src: url('Legothick.ttf');
   color: white;
 }
 
-.references {
-  left: 150px;
-  margin: 20px;
-  border: 3px white solid;
-  height: 100px;
-  width: 250px;
-  color: white;
-  text-shadow: 1px 1px white;
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  position:relative;
-  box-shadow: 10px 10px 5px black;
-  background-color: #FFFF00;
-  color: black;
-}
-
-.btnclk {
-  background-color: white;
-  color: black;
-  box-shadow: none;
-}
 .ending_caption {
   margin-top: 10px;
   margin-left: 50px;

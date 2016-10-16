@@ -4,75 +4,62 @@ $( document ).ready(function() {
 	$('#logo').addClass('animated bounceInLeft');
   $('.vidbar').addClass('animated bounceInLeft');
   $('.icon_links').addClass('animated bounceInUp');
-  $('.TitleBar').addClass('animated zoomIn');
-  $('.sholder').addClass('animated zoomIn');
-  $('.qbox').addClass('animated zoomIn');
-  $('.qbox_e').addClass('animated bounceInRight');
 
 
-
-  $(".references").click(function(){
-    console.log("references clicked");
-    $(".references").toggleClass("btnclk");
-    $( function() {
-    $( "#dialog" ).dialog();
-    } );
-    setTimeout(function() { $(".references").toggleClass("btnclk"); }, 5000);
-  });
-
-
-
-
-
-
-
-
-  $(".qbox_e").mouseleave(function(){
-    $(".qbox_e").addClass("shady");
-    $(".qbox_e").removeClass("notshady");
-  })
-  $(".qbox_e").mouseover(function(){
-    $(".qbox_e").addClass("notshady");
-    $(".qbox_e").removeClass("shady");
-  })
-
-  $(".searchwrap").mouseover(function(){
-      $( ".searchwrap" ).parent().css( "opacity", "1" );});
-  $(".searchwrap").mouseleave(function(){
-     $( ".searchwrap" ).parent().css( "opacity", ".5" );});
-  $(".searchwrap_y").mouseover(function(){
-      $( ".searchwrap_y" ).parent().css( "opacity", "1" );
-           });
-  $(".searchwrap_y").mouseleave(function(){
-      $( ".searchwrap_y" ).parent().css( "opacity", ".5" );
-              });
-  $(".searchwrap_b").mouseover(function(){
-      $( ".searchwrap_b" ).parent().css( "opacity", "1" );
-                 });
-  $(".searchwrap_b").mouseleave(function(){
-      $( ".searchwrap_b" ).parent().css( "opacity", ".5" );
-                    });
 
 $('#action-button').click(function() {
   console.log("Action button clicked!");
    $.ajax({
-      url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj',
+      url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj&search=&type=',
       data: {
-         format: 'json',
-         type: 'S',
-         query: '',
-         theme1: 'Architecture',
+         format: 'json'
       },
-      method: 'GET',
+      "method": "GET",
+          "headers": {
+              "cache-control": "no-cache"
+            },
+      dataType: 'json',
       success: function(data) {
         console.log(data);
-        var a = data.results[0];
-        console.log(a, a.descr);
-        $('#info').html(data.results[0].descr);
-        $('#picto').html('<img src=' + data.results[0].img_big + '></img>');
+         var $title = $('<h1>').text(data.results[0].descr);
+         console.log(data.results[0].img_url);
+         var $image = $('#picto').html('<img src="' + data.results[0].img_url + '">');
+         $('#info')
+            .append($title);
                               },
             });
                                     });
+
+$('#testform').submit(function(event) {
+    // get all the inputs into an array.
+    var input = $('#testform input').val();
+    event.preventDefault();
+    console.log(input);
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    $.ajax({
+       url: 'https://rebrickable.com/api/search',
+       data: {
+          key: '05VzmYE6Rj',
+          format: 'json',
+          query: input,
+          type: 'S'
+       },
+       "method": "GET",
+           "headers": {
+               "cache-control": "no-cache"
+             },
+       dataType: 'json',
+       success: function(data) {
+         console.log(data);
+          var $title = $('<h1>').text(data.results[0].descr);
+          console.log(data.results[0].img_url);
+          var $image = $('#picto').html('<img src="' + data.results[0].img_url + '">');
+          $('#info')
+             .append($title);
+                               },
+             });
+});
 
 });
 /*
@@ -85,15 +72,8 @@ $('#action-button').click(function() {
         "cache-control": "no-cache",
         "postman-token": "5e52c5ba-950a-ef8a-26ef-26bd29815307"}
       };
+
   $.ajax(settings).done(function (response) {
       console.log(response);
     });
   }); */
-
-
-
-
-
-/* rebrickable: 05VzmYE6Rj
-
-  brickset: SN9Y-MBSe-KJ4o  */
