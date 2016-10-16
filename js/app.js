@@ -2,13 +2,25 @@ $( document ).ready(function() {
   console.log( 'ready!' );
 
   $('.sidebar').addClass('animated bounceInLeft');
-	$('#logo').addClass('animated bounceInLeft');
+	$('#logol').addClass('animated bounceInLeft');
+  $('#logor').addClass('animated bounceInRight');
   $('.vidbar').addClass('animated bounceInLeft');
   $('.icon_links').addClass('animated bounceInUp');
   $('.TitleBar').addClass('animated zoomIn');
   $('.sholder').addClass('animated zoomIn');
   $('.qbox').addClass('animated zoomIn');
   $('.qbox_e').addClass('animated bounceInRight');
+
+  $(document).ready(function(){
+      $('#extsearch_m').keypress(function(e){
+        if(e.keyCode==13){
+          $('#action-button').click();
+          $('#picto').hide();
+          $('#info').hide();
+        }        
+      });
+  });
+
 
   $(".references").click(function(){
     console.log("references clicked");
@@ -46,7 +58,7 @@ $( document ).ready(function() {
   $('#action-button').click(function() {
     console.log("Action button clicked!");
 /*  var searchTerm = $('#query').val(); */
-    var val = $("input#extsearchbrickable").val();
+    var val = $("input#extsearch_m").val();
     console.log("val is" + val);
     $.ajax({
       url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj',
@@ -61,7 +73,9 @@ $( document ).ready(function() {
         console.log(data);
         var a = data.results[0];
         console.log(a, a.descr);
+        $('#info').show();
         $('#info').html(data.results[0].descr);
+        $('#picto').show();
         $('#picto').html('<img src=' + data.results[0].img_big + '></img>');
           },
       });

@@ -35,10 +35,21 @@ margin-top: 20px;
 
 #picto {
   height: auto;
-
+  max-width: 375px;
 }
 
-.sidebar {
+.sidebarl {
+  height: 310px;
+  width:310px;
+  border-color: black;
+	border-style: solid;
+	border-width: 5px;
+  background-color: black;
+  z-index: 4;
+  align-items: flex-end;
+}
+
+.sidebarr {
   height: 310px;
   width:310px;
   border-color: black;
@@ -70,6 +81,16 @@ margin-top: 20px;
   background-color: #E6331F;
 }
 
+.mainsearch {
+  flex-direction: row;
+  height: 150px;
+  width: 100%;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  background-color: blue;
+}
+
 .maindisplay {
   align-items: flex-end;
   height: auto;
@@ -79,8 +100,7 @@ margin-top: 20px;
   border-width: 5px;
   background-image: url("../Images/upclose.jpg");
   background-repeat: no-repeat;
-  background-repeat:repeat-y;
-  background-size: 115%;
+  background-size: 125%;
   z-index: 1;
 }
 
@@ -139,6 +159,17 @@ margin-top: 20px;
   box-shadow: 10px 10px 5px black;
 }
 
+.searchwrap_m {
+/*  background-color: #FFD401; */
+  border-style: solid;
+  border-width: 5px;
+  background-color: #FFFF00;
+  color: black;
+  box-shadow: 10px 10px 5px black;
+  width: 80%;
+  margin: auto;
+}
+
 .searchwrap_y {
   border-style: solid;
   border-width: 3px;
@@ -159,6 +190,7 @@ margin-top: 20px;
 .searchwrap {font-family: 'LegoFont';}
 .searchwrap_b {font-family: 'LegoFont';}
 .searchwrap_y {font-family: 'LegoFont';}
+.searchwrap_m {font-family: 'LegoFont';}
 .searchwrap {font-family: 'LegoFont';}
 .exboxp {font-family: 'LegoFont';}
 .references {font-family: 'LegoFont';}
@@ -208,7 +240,7 @@ margin-top: 20px;
 
 }
 
-#logo {
+#logol {
   display: inline-block;
   height: 300px;
   width: 300px;
@@ -217,6 +249,20 @@ margin-top: 20px;
   border-style: solid;
   border-width: 3px;
   background-image: url("../Images/basic.png");
+  z-index: 5;
+  margin-top: 7.5px;
+}
+
+#logor {
+  display: inline-block;
+  height: 300px;
+  width: 306px;
+  background-repeat: no-repeat;
+  border:black;
+  border-style: solid;
+  border-width: 3px;
+  background-image: url("../Images/basic2.png");
+  background-size: 100%;
   z-index: 5;
   margin-top: 7.5px;
 }
@@ -271,24 +317,41 @@ margin-top: 20px;
   background-color: white;
 }
 
+
+
 .expandabox:hover {
     height: 300px;
 }
 
-.input[type=text] {
+.input[type=text]:not(#extsearch_m) {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
+input[type=text]:focus:not(#extsearch_m) {
     width: 100%;
 }
 
 #extsearchbrickable:focus {
     width: 90%;
   }
+#extsearch_m {
+   height: 60px;
+   position: relative;
+   margin-top: 25px;
+   margin-left: 25px;
+   margin-right: 25px;
+   margin-bottom: 25px;
+   background: white;
+   font-size: 36px;
+   text-align: center;
+   z-index: 3;
+   box-shadow: 10px 10px 5px black;
+   width: 90%;
+ }
+#
 
 /* When the input field gets focus, change its width to 100% */
 
@@ -312,25 +375,28 @@ margin-top: 20px;
 #picto {
   height: auto;
   width: auto;
-  max-width: 450px;
+  max-width: 375px;
   max-height: inherit;
   margin: 20px;
-  border: 3px solid black;
-  box-shadow: 10px 10px 5px black;
-  width: 100%;
+  width: 90%;
 }
 
 #picto > img {
   height: auto;
-  max-width: 450px;
+  max-width: 375px;
   width: auto;
   max-height: 350px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px black;
 }
 
 #info {
   background-color: white;
   border: 3px solid black;
-  max-width: 450px;
+  width: 50%;
+  max-width: 375px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .personable {
@@ -361,6 +427,7 @@ html {
 .TitleBar {
   margin-bottom: 15px;
   margin-left: 25px;
+  margin-right: 25px;
   width: auto;
   width: 475px;
   background-color: none;
@@ -403,7 +470,7 @@ src: url('Legothick.ttf');
 
 
 
-.footer {
+.footer, .subfooter {
   width: 100%;
 	height: 160px;
 	/*margin-top: 2px;
@@ -424,7 +491,7 @@ src: url('Legothick.ttf');
 
 .icon_links {
   margin-top: 30px;
-  margin-left: 150px;
+  margin-left: 50px;
   max-width: 60%;
   align-items: flex-start;
   justify-content: space-around;
@@ -464,7 +531,7 @@ src: url('Legothick.ttf');
 }
 
 .references {
-  left: 150px;
+  right: 20px;
   margin: 20px;
   border: 3px white solid;
   height: 100px;
@@ -474,10 +541,13 @@ src: url('Legothick.ttf');
   font-size: 36px;
   font-weight: bold;
   text-align: center;
-  position:relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
   box-shadow: 10px 10px 5px black;
   background-color: #FFFF00;
   color: black;
+  position: inherit;
 }
 
 .btnclk {
