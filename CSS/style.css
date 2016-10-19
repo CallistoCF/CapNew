@@ -8,15 +8,16 @@
 }
 
 .bumblebar {
-  flex-direction: row;
-  align-items: flex-end;
-	height: 310px;
-	width: 100%;
-	border-color: black;
-	border-style: solid;
-	border-width: 5px;
+  /* flex-direction: row; */
+  /* align-items: flex-end; */
+  /* height: 310px; */
+  width: 100%;
+  border: 5px solid black;
+  /* border-style: solid; */
+  border-width: 5px;
   background-color: #E6331F;
   color: white;
+  position: relative;
 }
 
 .sholder {
@@ -39,25 +40,31 @@ margin-top: 20px;
 }
 
 .sidebarl {
-  height: 310px;
-  width:310px;
+  height: 150px;
+  width: 150px;
   border-color: black;
-	border-style: solid;
-	border-width: 5px;
+  border-style: solid;
+  border-width: 5px;
   background-color: black;
-  z-index: 4;
-  align-items: flex-end;
+  /* z-index: 4; */
+  /* align-items: flex-end; */
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .sidebarr {
-  height: 310px;
-  width:310px;
+  height: 150px;
+  width: 150px;
   border-color: black;
-	border-style: solid;
-	border-width: 5px;
+  border-style: solid;
+  border-width: 5px;
   background-color: black;
-  z-index: 4;
-  align-items: flex-end;
+  /* z-index: 4; */
+  /* align-items: flex-end; */
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 
 .vidbar {
@@ -159,16 +166,7 @@ margin-top: 20px;
   box-shadow: 10px 10px 5px black;
 }
 
-.searchwrap_m {
-/*  background-color: #FFD401; */
-  border-style: solid;
-  border-width: 5px;
-  background-color: #FFFF00;
-  color: black;
-  box-shadow: 10px 10px 5px black;
-  width: 80%;
-  margin: auto;
-}
+.searchwrap_m {/*  background-color: #FFD401; */border: 5px solid black;/* border-width: 5px; */background-color: #FFFF00;color: black;box-shadow: 10px 10px 5px black;width: 80%;margin: 0 auto;}
 
 .searchwrap_y {
   border-style: solid;
@@ -242,30 +240,33 @@ margin-top: 20px;
 }
 
 #logol {
-  display: inline-block;
-  height: 300px;
-  width: 300px;
+  /* display: inline-block; */
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
-  border:white;
-  border-style: solid;
-  border-width: 3px;
+  border: 3px solid white;
+  /* border-style: solid; */
+  /* border-width: 3px; */
   background-image: url("../Images/basic.png");
-  z-index: 5;
-  margin-top: 7.5px;
+  /* z-index: 5; */
+  /* margin-top: 7.5px; */
+  background-size: cover;
+  background-position: center center;
 }
 
 #logor {
-  display: inline-block;
-  height: 300px;
-  width: 306px;
+  /* display: inline-block; */
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
-  border:black;
-  border-style: solid;
-  border-width: 3px;
+  border: 3px solid black;
+  /* border-style: solid; */
+  /* border-width: 3px; */
   background-image: url("../Images/basic2.png");
-  background-size: 100%;
-  z-index: 5;
-  margin-top: 7.5px;
+  background-size: cover;
+  /* z-index: 5; */
+  /* margin-top: 7.5px; */
+  background-position: center center;
 }
 
 #extsearch, #extsearch_y, #extsearch_b {
@@ -339,18 +340,19 @@ input[type=text]:focus:not(#extsearch_m) {
     width: 90%;
   }
 #extsearch_m {
-   height: 60px;
-   position: relative;
-   margin-top: 25px;
-   margin-left: 25px;
-   margin-right: 25px;
-   margin-bottom: 25px;
+   /* height: 60px; */
+   /* position: relative; */
+   margin: 25px;
+   /* margin-left: 25px; */
+   /* margin-right: 25px; */
+   /* margin-bottom: 25px; */
    background: white;
    font-size: 36px;
    text-align: center;
-   z-index: 3;
+   /* z-index: 3; */
    box-shadow: 10px 10px 5px black;
-   width: 90%;
+   width: 96%;
+   padding: 20px 0px;
  }
 #
 
@@ -406,8 +408,10 @@ margin-top: 20px;
 #infoc {font-family: 'LegoFont';}
 
 .gmapimg {
-  width: 500px;
-  height: 500px;
+  width: 90%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;;
   margin: 20px auto;
   border: black 3px solid;
 }
@@ -437,28 +441,21 @@ html {
 }
 
 .TitleBar {
-  margin-bottom: 15px;
-  margin-left: 25px;
-  margin-right: 25px;
-  width: auto;
-  width: 475px;
+  /* margin-bottom: 15px; */
+  /* margin-left: 25px; */
+  /* margin-right: 25px; */
+  /* width: auto; */
+  /* width: 475px; */
   background-color: none;
   color: #FFD000;
   text-align: center;
   font-size: 64px;
-  justify-content: center;
-
+  /* justify-content: center; */
+  width: 50%;
+  margin: 0 auto;
 }
 
-.TitleBar p {
-/*  background-color: #FFD401; */
-  border-style: solid;
-  border-width: 3px;
-  background-color: #E6331F;
-  color: white;
-  text-shadow: 2px 2px black;
-  box-shadow: 10px 10px 5px black;
-}
+.TitleBar p {/*  background-color: #FFD401; */border-style: solid;border-width: 3px;background-color: #E6331F;color: white;text-shadow: 2px 2px black;box-shadow: 10px 10px 5px black;margin: 0px;}
 
 .TitleBar {font-family: 'LegoFont';}
 

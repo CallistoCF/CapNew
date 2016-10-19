@@ -62,7 +62,7 @@ $( document ).ready(function() {
     console.log("Action button clicked!");
 /*  var searchTerm = $('#query').val(); */
     var val = $("input#extsearch_m").val();
-    val = val.replace(/\s/g, '+')
+    val = val.replace(/\s/g, '+');
     console.log("val is" + val);
     $.ajax({
       url: 'https://rebrickable.com/api/search?key=05VzmYE6Rj',
@@ -75,14 +75,14 @@ $( document ).ready(function() {
       method: 'GET',
       success: function(data) {
         console.log(data);
-        if(data.results.length == 0)
+        if(data.results.length === 0)
         {
           console.log("location not found!");
-          $('#info').html("<p>There are no Lego sets for location " + val + " in the rebrickable-database!</p>");
-          $('#info').show();
+          console.log("There are no Offical Lego sets for location " + val + " in the rebrickable-database!");
+          
           gmap(val);
         }
-        if (data.results.length != 0)
+        if (data.results.length !== 0)
         {
           var a = data.results[0];
           console.log(a, a.descr);
@@ -109,9 +109,9 @@ function gmap(val){
   console.log("gmap called, val is " + val);
   $('.gmapimg').show();
     var gurl = 'https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyACpue7v_V7afU6vsUx7sBq4CFQmDSoFqI';
-    var gsize = '&size=600x600';
+    var gsize = '&size=1200x1200';
     var gcenter = '&center=' + val;
-    var gg = gurl + gsize + gcenter
+    var gg = gurl + gsize + gcenter;
     console.log("gg is " + gg);
     var b = 'url(' + gg + ')';
     console.log("b is " + b);
