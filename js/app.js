@@ -79,13 +79,16 @@ $( document ).ready(function() {
         {
           console.log("location not found!");
           console.log("There are no Offical Lego sets for location " + val + " in the rebrickable-database!");
-          $('#info').html('<p>Yikes!  There are no Offical Lego sets for ' + val + ' in the rebrickable database!</p>');
+          $('#info').html('<p>Yikes!  There are no Offical Lego sets for ' + val + ' in the rebrickable database!  To the left are the first ten Google Images we can find</p>');
           $('#info').show();
-          $('#infob').html('<p>Would you like to search google for ' + val + ' in lego?</p>');
+          $('#infob').html('<p>Would you like to see a custom <a href="https://www.google.com/search?as_st=y&tbm=isch&as_q=lego+' + val + '&as_epq=&as_oq=&as_eq=&imgsz=&imgar=&imgc=&imgcolor=&imgtype=&cr=&as_sitesearch=&safe=images&as_filetype=&as_rights=">google</a> image search for ' + val + ' in lego?</p>');
+          /*$('.gsc-input-box').html(val + ' lego'); */
           $('#infob').show();
-          $('#infoc').html('<p>Would you like to search Instagram for ' + val + ' in lego?</p>');
+          $('#infoc').html('<p>Would you like to see <a href="https://en.wikipedia.org/wiki/Lego_Architecture"> a list </a>of places made in lego?</p>');
           $('#infoc').show();
-          gmap(val);
+          gii(val);
+          $('#searcho').show();
+          /*gmap(val);*/
         }
         if (data.results.length !== 0)
         {
@@ -102,8 +105,6 @@ $( document ).ready(function() {
           $('#picto').html('<img src=' + data.results[0].img_big + '></img>');
           gmap(val);
         }
-
-
           },
       });
 
@@ -124,6 +125,39 @@ function gmap(val){
 
 
   }
+
+function gii(val){
+  console.log("Google advanced Image search called!");
+  $.ajax({
+    url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBkRs0PB1z9zCh17Ul6jzkJAcpVpCMf40w&cx=007694209913361185258:dqzjo8ajsb0&searchType=image',
+    data: {
+      q: val + '+lego',
+          },
+    method: 'GET',
+    success: function(data) {
+      console.log(data);
+      if(data.items.length === 0)
+      {
+        console.log("error");
+      }
+      if (data.items.length !== 0)
+      {
+        $('#searcho').addClass("shadecity");
+        var a = data.items[0];
+        console.log("a is " + a);
+        for (var x = 0; x < 10; x++){
+          var name = 'div.searchbo' + x;
+          var div = $('#searcho').append('<div class="searchbo ' + x + '" display="inline-block"><img src="' + data.items[x].link + '"></div>')
+
+          $(name).html()
+        }
+      }
+
+
+        },
+    });
+
+}
 
 
 

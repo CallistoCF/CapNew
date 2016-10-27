@@ -40,6 +40,35 @@ margin-top: 20px;
   max-width: 375px;
 }
 
+#searcho {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px auto;
+  border: black 3px solid;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#searcho img {
+  min-height: 20px;
+  min-width: 30px;
+  max-width: 200px;
+  max-height: 300px;
+  position: inherit;
+  margin: auto;
+  resize: both;
+  display: inline-flex;
+}
+
+.shadecity {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .sidebarl {
   height: 150px;
   width: 150px;
