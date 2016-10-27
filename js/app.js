@@ -79,7 +79,12 @@ $( document ).ready(function() {
         {
           console.log("location not found!");
           console.log("There are no Offical Lego sets for location " + val + " in the rebrickable-database!");
-          
+          $('#info').html('<p>Yikes!  There are no Offical Lego sets for ' + val + ' in the rebrickable database!</p>');
+          $('#info').show();
+          $('#infob').html('<p>Would you like to search google for ' + val + ' in lego?</p>');
+          $('#infob').show();
+          $('#infoc').html('<p>Would you like to search Instagram for ' + val + ' in lego?</p>');
+          $('#infoc').show();
           gmap(val);
         }
         if (data.results.length !== 0)

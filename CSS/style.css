@@ -534,14 +534,29 @@ src: url('Legothick.ttf');
   background-position: center;
 }
 
+.icon_links > a {
+  text-decoration: none;
+}
+
+.icon_links > a:hover {
+  text-decoration: none;
+}
+
+.icon_links > a:visited {
+  text-decoration: none;
+}
+
+.icon_links > a:active {
+  text-decoration: none;
+}
+
 .icon_links > i:hover {
   background-color: black;
   color: white;
 }
 
 .references {
-  right: 20px;
-  margin: 20px;
+  margin: auto;
   border: 3px white solid;
   height: 100px;
   width: 250px;
@@ -557,6 +572,7 @@ src: url('Legothick.ttf');
   background-color: #FFFF00;
   color: black;
   position: inherit;
+  float: right;
 }
 
 .btnclk {
