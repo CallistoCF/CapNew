@@ -1,5 +1,6 @@
 
 
+
 .container {
   display: flex; /* or inline-flex */
   flex-wrap: nowrap;
@@ -513,7 +514,7 @@ src: url('Legothick.ttf');
   z-index: 5
 }
 
-.icon_links > i {
+.icon_links i, .icon_links a {
   background-color: white;
   border-radius: 50%;
   padding-top: 10px;
@@ -536,6 +537,11 @@ src: url('Legothick.ttf');
 
 .icon_links > a {
   text-decoration: none;
+  color: black;
+  display: block;
+  float: left;
+  padding-left: 0;
+  padding-right: 11px;
 }
 
 .icon_links > a:hover {
