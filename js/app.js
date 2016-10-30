@@ -86,8 +86,9 @@ $( document ).ready(function() {
         {
           console.log("location not found!");
           console.log("There are no Offical Lego sets for location " + val + " in the rebrickable-database!");
-          $('#info').html('<p>Yikes!  There are no Offical Lego sets for ' + val + ' in the rebrickable database!  To the left are the first ten Google Images we can find</p>');
+          $('#info').html('<p>Yikes!  There are no Offical Lego sets for ' + val + ' in the rebrickable database!  Some Google Images to the left instead :-)</p>');
           $('#info').show();
+          /*
           $('#infob').html('<p>Would you like to see a custom <a href="https://www.google.com/search?as_st=y&tbm=isch&as_q=lego+' + val + '&as_epq=&as_oq=&as_eq=&imgsz=&imgar=&imgc=&imgcolor=&imgtype=&cr=&as_sitesearch=&safe=images&as_filetype=&as_rights=">google</a> image search for ' + val + ' in lego?</p>');
           /*$('.gsc-input-box').html(val + ' lego'); */
           $('#infob').show();
