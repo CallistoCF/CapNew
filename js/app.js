@@ -140,10 +140,11 @@ function gmap(val){
 function gii(val){
   $('.gmapimg').hide();
   console.log("Google advanced Image search called!");
+  var searchq = val + '+lego';
   $.ajax({
     url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBkRs0PB1z9zCh17Ul6jzkJAcpVpCMf40w&cx=007694209913361185258:dqzjo8ajsb0&searchType=image',
     data: {
-      q: val + '+lego',
+      q: searchq,
           },
     method: 'GET',
     success: function(data) {
