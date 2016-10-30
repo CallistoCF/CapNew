@@ -54,19 +54,35 @@ margin-top: 20px;
   justify-content: center;
 }
 
-#searcho img {
-  min-height: 20px;
-  min-width: 30px;
-  max-width: 200px;
-  max-height: 300px;
-  position: inherit;
+.searchbo {
   margin: auto;
-  resize: both;
-  display: inline-flex;
+  display: inline-block;
+  height: 30%;
+  width: 30%;
 }
 
-.searchbo {
+@media only screen and (max-width: 900px) and (min-width: 651px){
+	.searchbo {
+    width:50%;
+  }
+}
 
+@media only screen and (max-width: 650px){
+	.searchbo {
+    width:95%;
+  }
+}
+
+.searchbo img{
+  min-height: 20px;
+  min-width: 30px;
+  resize: both;
+  display: inline-flex;
+  margin: auto;
+  position: inherit;
+  width: 95%;
+  height: 95%;
+  border: 3px solid red;
 }
 
 .shadecity {

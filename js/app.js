@@ -23,6 +23,13 @@ $( document ).ready(function() {
       });
   });
 
+  var picsondisplay = 0;
+  var lastsearch;
+
+  $( window ).resize(function() {
+    var bb = $(window).width()
+    console.log("window has been changed to " + bb);
+  });
 
   $(".references").click(function(){
     console.log("references clicked");
@@ -86,7 +93,9 @@ $( document ).ready(function() {
           $('#infob').show();
           $('#infoc').html('<p>Would you like to see <a href="https://en.wikipedia.org/wiki/Lego_Architecture"> a list </a>of places made in lego?</p>');
           $('#infoc').show();
+          lastsearch = val;
           gii(val);
+          picsondisplay = 1;
           $('#searcho').show();
           /*gmap(val);*/
         }
@@ -95,7 +104,6 @@ $( document ).ready(function() {
           var a = data.results[0];
           console.log(a, a.descr);
           $('#searcho').hide();
-          $('#searcho').empty();
 
           $('#info').show();
           $('#infob').show();
@@ -103,7 +111,6 @@ $( document ).ready(function() {
           $('#info').html(data.results[0].descr);
           $('#infob').html("<p>#ofPieces: " + data.results[0].pieces + "</p>");
           $('#infoc').html("<p>SetNumber:  " + data.results[0].set_id + "</p>");
-
           $('#picto').show();
           $('#picto').html('<img src=' + data.results[0].img_big + '></img>');
           gmap(val);
@@ -146,15 +153,31 @@ function gii(val){
       }
       if (data.items.length !== 0)
       {
+        var aa = $(window).width()
+        console.log("checksize is " + aa);
         $('#searcho').addClass("shadecity");
         var a = data.items[0];
         console.log("a is " + a);
-        for (var x = 0; x < 10; x++){
-          var name = 'div.searchbo' + x;
-          var div = $('#searcho').append('<div class="searchbo ' + x + '" display="inline-block"><img src="' + data.items[x].link + '"></div>')
-
-          $(name).html()
+        var d = 9;
+        if (aa <= 650)
+        {
+           var d = 3;
         }
+        if (aa <= 900 && aa >= 650)
+        {
+           var d = 6;
+        }
+        for (var x = 0; x < d; x++)
+        {
+            var name = 'div.searchbo';
+            var div = $('#searcho').append('<div class="searchbo ' + x + '"><img src="' + data.items[x].link + '"></div>')
+            $(name).html()
+        }
+
+
+
+
+
       }
 
 
