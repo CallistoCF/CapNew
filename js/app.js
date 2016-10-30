@@ -91,7 +91,7 @@ $( document ).ready(function() {
           /*
           $('#infob').html('<p>Would you like to see a custom <a href="https://www.google.com/search?as_st=y&tbm=isch&as_q=lego+' + val + '&as_epq=&as_oq=&as_eq=&imgsz=&imgar=&imgc=&imgcolor=&imgtype=&cr=&as_sitesearch=&safe=images&as_filetype=&as_rights=">google</a> image search for ' + val + ' in lego?</p>');
           /*$('.gsc-input-box').html(val + ' lego'); */
-          $('#infob').show();
+          $('#infob').hide();
           $('#infoc').html('<p>Would you like to see <a href="https://en.wikipedia.org/wiki/Lego_Architecture"> a list </a>of places made in lego?</p>');
           $('#infoc').show();
           lastsearch = val;
