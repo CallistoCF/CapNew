@@ -65,6 +65,10 @@ margin-top: 20px;
 	.searchbo {
     width:50%;
   }
+
+  .6, .7, .8 {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 650px){
@@ -456,6 +460,20 @@ margin-top: 20px;
 #info {font-family: 'LegoFont';}
 #infob {font-family: 'LegoFont';}
 #infoc {font-family: 'LegoFont';}
+
+@media only screen and (max-width: 900px) and (min-width: 651px){
+	#info, #infob, #infoc {
+    font-size: 18px;
+    text-shadow: 3px 3px 3px white;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  #info, #infob, #infoc {
+    font-size: 12px;
+    text-shadow: 1px 1px 1px white;
+  }
+}
 
 .gmapimg {
   width: 90%;

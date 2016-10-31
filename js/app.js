@@ -15,6 +15,7 @@ $( document ).ready(function() {
       $('#extsearch_m').keypress(function(e){
         if(e.keyCode==13){
           $('#action-button').click();
+          $('#searcho').empty();
           $('#picto').hide();
           $('#info').hide();
           $('#infob').hide();
@@ -133,9 +134,58 @@ function gmap(val){
     var b = 'url(' + gg + ')';
     console.log("b is " + b);
     $('.gmapimg').css("background-image",  b);
-
-
   }
+
+  function bingsearch(searchq){
+    console.log("emerygency bing img replacement search started!");
+    $(function() {
+    var params = {
+        // Request parameters
+        "q": searchq,
+        "count": "10",
+        "offset": "0",
+        "mkt": "en-us",
+        "safeSearch": "Moderate",
+    };
+
+    $.ajax({
+        url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
+        beforeSend: function(xhrObj){
+            // Request headers
+            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","9ca57af5d0c345fbb698c171948cec56");
+        },
+        type: "GET",
+        // Request body
+        data: "{body}",
+    })
+    .done(function(data) {
+        console.log("success");
+        console.log(data.value);
+        var aa = $(window).width()
+        console.log("checksize is " + aa);
+        var d = 9;
+        if (aa <= 650)
+        {
+           var d = 3;
+        }
+        if (aa <= 900 && aa >= 650)
+        {
+           var d = 6;
+        }
+        for (var x = 0; x < d; x++)
+        {
+            var name = 'div.searchbo';
+            var div = $('#searcho').append('<div class="searchbo ' + x + '"><img src="' + data.value[x].thumbnailUrl + '"></div>');
+            $(name).html();
+        }
+        console.log("end image placement");
+    })
+    .fail(function() {
+        console.log("error");
+        });
+    });
+};
+
 
 function gii(val){
   $('.gmapimg').hide();
@@ -147,11 +197,16 @@ function gii(val){
       q: searchq,
           },
     method: 'GET',
+    error: function(){
+      console.log("An error has occurred, perhaps you've sent too many requests?");
+      console.log("Launching emerygency bing search");
+      bingsearch(searchq);
+    },
     success: function(data) {
       console.log(data);
       if(data.items.length === 0)
       {
-        console.log("error");
+        console.log("error- no search results!");
       }
       if (data.items.length !== 0)
       {
@@ -172,21 +227,18 @@ function gii(val){
         for (var x = 0; x < d; x++)
         {
             var name = 'div.searchbo';
-            var div = $('#searcho').append('<div class="searchbo ' + x + '"><img src="' + data.items[x].link + '"></div>')
-            $(name).html()
+            var div = $('#searcho').append('<div class="searchbo ' + x + '"><img src="' + data.items[x].link + '"></div>');
+            $(name).html();
         }
-
-
-
-
-
+      }
       }
 
 
-        },
     });
 
 }
+
+
 
 
 
